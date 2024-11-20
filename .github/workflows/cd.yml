@@ -1,11 +1,6 @@
 name: Publish to crates.io
 
 on:
-  workflow_run:
-    workflows: ["CI"]
-    types:
-      - completed
-    status: success
   push:
     tags:
       - 'v*.*.*'
@@ -21,8 +16,8 @@ jobs:
     - name: Install toolchain
       run: rustup show active-toolchain
 
-    - name: Install Dependencies
-      run: cargo fetch
+    - name: Run Tests
+      run: cargo test --verbose
 
     - name: Publish to crates.io
       env:
