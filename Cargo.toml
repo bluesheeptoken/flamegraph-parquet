@@ -1,0 +1,15 @@
+[package]
+name = "parquet-flamegraph"
+version = "0.1.0"
+edition = "2021"
+authors = ["Louis Fruleux <louis.fruleux1@gmail.com>"]
+description = "A simple program to generate flamegraph and investigate parquet storage"
+homepage = "https://github.com/bluesheeptoken/flamegraph-parquet"
+repository = "https://github.com/bluesheeptoken/flamegraph-parquet"
+license = "MIT"
+
+[dependencies]
+clap = "4.5.21"
+inferno = "0.12.0"
+parquet = "53.2.0"
+uuid = { version = "1", features = ["v4"] }

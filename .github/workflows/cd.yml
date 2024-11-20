@@ -1,0 +1,30 @@
+name: Publish to crates.io
+
+on:
+  workflow_run:
+    workflows: ["CI"]
+    types:
+      - completed
+    status: success
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install toolchain
+      run: rustup show active-toolchain
+
+    - name: Install Dependencies
+      run: cargo fetch
+
+    - name: Publish to crates.io
+      env:
+        CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
+      run: cargo publish

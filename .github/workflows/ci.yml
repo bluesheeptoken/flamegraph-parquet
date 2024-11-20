@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+
+    - name: Install toolchain
+      run: rustup show active-toolchain
+
+    - name: Install Dependencies
+      run: |
+        rustup component add clippy
+        rustup component add rustfmt
+
+    - name: Run Tests
+      run: cargo test --verbose
+
+    - name: Check Formatting
+      run: cargo fmt -- --check
+
+    - name: Run Clippy
+      run: cargo clippy -- -D warnings
+
+    - name: Build Project
+      run: cargo build --release
