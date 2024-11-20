@@ -4,7 +4,8 @@
 
 It helps to identify which columns take up the most storage in a parquet file.
 
-Example (download it and open it with a web browser to zoom): <img src="./documentation/nested_maps.svg">
+Example (click to zoom): [![Flamegraph example](./documentation/nested_maps.svg)](https://raw.githubusercontent.com/bluesheeptoken/parquet-flamegraph/refs/heads/main/documentation/nested_maps.svg)
+
 
 Hovering over the fields will show the exact number of bytes used by each column. (You will need to open the file in a browser.)
 

@@ -39,10 +39,10 @@ pub enum Unit {
 impl fmt::Display for Unit {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         let name = match self {
-            Unit::Bytes => "b",
-            Unit::KiloBytes => "kb",
-            Unit::MegaBytes => "mb",
-            Unit::GigaBytes => "gb",
+            Unit::Bytes => "Bytes",
+            Unit::KiloBytes => "KB",
+            Unit::MegaBytes => "MB",
+            Unit::GigaBytes => "GB",
         };
         write!(f, "{}", name)
     }

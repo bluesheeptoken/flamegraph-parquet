@@ -4,8 +4,8 @@ version = "0.1.1"
 edition = "2021"
 authors = ["Louis Fruleux <louis.fruleux1@gmail.com>"]
 description = "A simple program to generate flamegraph and investigate parquet storage"
-homepage = "https://github.com/bluesheeptoken/flamegraph-parquet"
-repository = "https://github.com/bluesheeptoken/flamegraph-parquet"
+homepage = "https://github.com/bluesheeptoken/parquet-flamegraph"
+repository = "https://github.com/bluesheeptoken/parquet-flamegraph"
 license = "MIT"
 readme = "README.md"
 
